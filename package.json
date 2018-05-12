@@ -1,0 +1,19 @@
+{
+  "name": "db-json",
+  "version": "1.0.0",
+  "description": "Feather weight writing and reading to json",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^6.0.110",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
