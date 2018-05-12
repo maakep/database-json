@@ -4,7 +4,7 @@ Featherweight writing and reading to json files
 
 ## Installation
 
-npm i jsondb --save
+npm i @devkep/database-json --save
 
 
 ## Usage

@@ -1,6 +1,6 @@
 {
-  "name": "jsondb",
-  "version": "0.0.9",
+  "name": "@devkep/database-json",
+  "version": "1.0.0",
   "description": "Featherweight writing and reading to json files",
   "main": "./dist/index.js",
   "author": "Fredrik S <schon.fredrik+npm@gmail.com>",
