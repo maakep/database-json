@@ -6,7 +6,7 @@ class Db {
     parent: any;
 
     public constructor(name: string) {
-        this.fname = path.join("dist", name + ".json");
+        this.fname = path.resolve(name + ".json");
         this.parent = {};
 
         if (!fs.existsSync(this.fname)) {
@@ -21,7 +21,7 @@ class Db {
         if (path !== undefined) {
             return object[path];
         }
-        
+
         return object;
     }
 
