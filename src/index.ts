@@ -14,9 +14,14 @@ class Db {
         }
     }
 
-    public read() {
+    public read(path?: string) {
         var file = fs.readFileSync(this.fname, "utf8");
         let object = JSON.parse(file);
+        
+        if (path !== undefined) {
+            return object[path];
+        }
+        
         return object;
     }
 
