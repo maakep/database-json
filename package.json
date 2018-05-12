@@ -1,13 +1,28 @@
 {
-  "name": "db-json",
-  "version": "1.0.0",
-  "description": "Feather weight writing and reading to json",
+  "name": "jsondb",
+  "version": "0.0.9",
+  "description": "Featherweight writing and reading to json files",
   "main": "./dist/index.js",
+  "author": "Fredrik S <schon.fredrik+npm@gmail.com>",
+  "keywords": [
+    "database",
+    "db",
+    "json",
+    "fs",
+    "filesystem"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maakep/jsondb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maakep/jsondb/issues"
+  },
+  "homepage": "https://github.com/maakep/jsondb#readme",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^22.2.3",
