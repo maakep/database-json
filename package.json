@@ -5,15 +5,32 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^22.2.3",
     "@types/node": "^6.0.110",
+    "jest": "^22.4.3",
+    "ts-jest": "^22.4.6",
     "typescript": "^2.8.3"
   },
   "dependencies": {
     "fs": "0.0.1-security"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
