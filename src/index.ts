@@ -3,49 +3,80 @@ import * as path from "path";
 
 class Db {
     fname: string;
+    parent: any;
 
-    constructor(name: string) {
-        this.fname = name + ".json";
+    public constructor(name: string) {
+        this.fname = path.join("dist", name + ".json");
+        this.parent = {};
 
-        fs.writeFile(this.fname, "", { flag: 'wx' }, function (err) {
-            if (err) throw err;
-            console.log("File created!");
-        });
+        if (!fs.existsSync(this.fname)) {
+            fs.writeFileSync(this.fname, "{}");
+        }
     }
 
-    get(callback: (fileContentObject: any) => any): any {
+    /*public readAsync(callback: (content: any) => any): any {
         fs.readFile(this.fname, "utf8", (err, data) => {
-            if (err) 
+            if (err)
                 throw err;
 
             let object = JSON.parse(data);
             callback(object);
         });
-    }
+    }*/
 
-    getSync() {
+    public read() {
         var file = fs.readFileSync(this.fname, "utf8");
-        if (file === undefined) {
-            console.log("Couldn't find " + this.fname + ".json");
-        }
         let object = JSON.parse(file);
         return object;
     }
 
-    push(path: string, data: any, callback?: (err?: any) => any) {
-        let obj 
-        let jsonString = JSON.stringify(data);
+    /*public pushAsync(data: any, callback?: (err?: any) => any): void {
+        data = JSON.stringify(data);
         fs.writeFile(this.fname, data, (err) => {
             if (callback !== undefined) {
                 callback(err);
             }
         });
+    }*/
+
+    public push(path: string, data: any): void {
+        this.parent[path] = data;
+        let insert = JSON.stringify(this.parent);
+        fs.writeFileSync(this.fname, insert);
     }
 
-    delete() {
-
+    private update() {
+        this.insert(this.parent);
     }
 
+    private insert(object: Object) {
+        var data = JSON.stringify(object);
+        fs.writeFileSync(this.fname, data);
+    }
+
+    public truncate() {
+        this.parent = {};
+        this.update();
+    }
+
+    public delete(path: string) {
+        delete(this.parent[path]);
+        this.update();
+    }
+
+    public unlink() {
+        fs.unlinkSync(this.fname);
+    }
+    
+    /*public deleteAsync(callback: (err?: any) => any) {
+        fs.unlink(this.fname, (err) => {
+            callback(err);
+        })
+    }*/
+
+    public exists() {
+        return fs.existsSync(this.fname);
+    }
 }
 
 export default Db;
