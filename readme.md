@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/maakep/database-json.svg?branch=master)](https://travis-ci.org/maakep/database-json)
+
 # Object-to-file, JSON database
 
 Featherweight writing and reading object to/from json files.
