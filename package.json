@@ -1,8 +1,9 @@
 {
   "name": "@devkep/database-json",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Featherweight writing and reading to json files",
-  "main": "./dist/index.js",
+  "main": "./dist/index",
+  "typings": "./dist/index",
   "author": "Fredrik S <schon.fredrik+npm@gmail.com>",
   "keywords": [
     "database",
