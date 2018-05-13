@@ -34,7 +34,7 @@ db.read("MyTesting");
 ```
 object returned: 
 ```json
-{ "hello": "world"}
+{ "hello": "world" }
 ```
 
 
