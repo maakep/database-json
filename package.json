@@ -1,6 +1,6 @@
 {
   "name": "@devkep/database-json",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Featherweight writing and reading to json files",
   "main": "./dist/index",
   "typings": "./dist/index",
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maakep/jsondb.git"
+    "url": "git+https://github.com/maakep/database-json.git"
   },
   "bugs": {
-    "url": "https://github.com/maakep/jsondb/issues"
+    "url": "https://github.com/maakep/database-json/issues"
   },
-  "homepage": "https://github.com/maakep/jsondb#readme",
+  "homepage": "https://github.com/maakep/database-json#readme",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^22.2.3",
