@@ -20,14 +20,14 @@ db.push("Greeting", { Hello: "World"});
 db.read("Greeting");
 ```
 
-## Typescript docs
+## Docs
 ### Creating database
 Create a database named "database-name":
 ```typescript
 import Database from 'object-to-file';
 var db = new Database("database-name");
 
-// or, in js
+// or...
 
 var objectToFile = require("object-to-file");
 var db = new objectToFile.default("database-name");
