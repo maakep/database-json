@@ -20,12 +20,13 @@ test("R - Making sure read works", () => {
 test("U - Inserting to db", () => {
     db.push("test", testObject);
     var newDb = db.read();
-    expect(newDb).toEqual({test: testObject});
+    expect(newDb).toEqual({ test: testObject });
 });
 
 test("U - Inserting multiple to db", () => {
     db.push("test2", testObject);
-    expect(db.read()).toEqual({test: testObject, test2: testObject})
+    db.push("test", testObject);
+    expect(db.read()).toEqual({ test: testObject, test2: testObject })
 });
 
 test("R - Read specific object", () => {
@@ -34,8 +35,8 @@ test("R - Read specific object", () => {
 });
 
 test("D - Deleting specific object", () => {
-    db.delete("test");
-    expect(db.read()).toEqual({test2: testObject});
+    db.drop("test");
+    expect(db.read()).toEqual({ test2: testObject });
 });
 
 test("D - Truncating db", () => {
@@ -44,9 +45,6 @@ test("D - Truncating db", () => {
 });
 
 test("D - Deleting database", () => {
-    db.unlink();
+    db.delete();
     expect(db.exists()).toEqual(false);
 });
-
-
-

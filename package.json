@@ -1,6 +1,6 @@
 {
   "name": "object-to-file",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "description": "Featherweight writing and reading to json files",
   "main": "./dist/index",
   "typings": "./dist/index",
@@ -30,8 +30,8 @@
   "devDependencies": {
     "@types/jest": "^22.2.3",
     "@types/node": "^6.0.110",
-    "jest": "^22.4.3",
-    "ts-jest": "^22.4.6",
+    "jest": "^24.7.1",
+    "ts-jest": "^24.0.2",
     "typescript": "^2.8.3"
   },
   "dependencies": {
